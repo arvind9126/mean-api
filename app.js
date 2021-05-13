@@ -1,6 +1,7 @@
 require('./config/config')
 require('./models/db')
 require('./config/passportConfig')
+const path = require('path');
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -26,6 +27,10 @@ app.use((err, req, res, next) => {
         res.status(422).send(valErrors)
     }
 })
+
+app.get('/*', (req, res) =>
+    res.sendFile('index.html', {root: 'dist/local-storage/'}),
+);
 
 //start server
 app.listen(process.env.PORT, () => {
