@@ -1,0 +1,30 @@
+<table *ngIf="userDetails" class="table">
+    <thead>
+      <tr>
+        <th scope="col" colspan="2" class="text-center">User Profile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>First Name</td>
+        <td>{{userDetails.first_name}}</td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>{{userDetails.last_name}}</td>
+      </tr>
+      <tr>
+        <td>Email Id</td>
+        <td>{{userDetails.email}}</td>
+      </tr>
+      <tr>
+        <td>Mobile Number</td>
+        <td>{{userDetails.mobile}}</td>
+      </tr>
+      <tr>
+        <td scope="col" colspan="2" class="text-center">
+            <input type="button" (click)="onLogout()" value="Logout" />
+        </td>
+      </tr>
+    </tbody>
+  </table>

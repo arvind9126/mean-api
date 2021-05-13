@@ -1,0 +1,26 @@
+  <div class="main">
+        <h3>Sign Up</h3>
+       <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+                <input type="text" #firstName = "ngModel" [(ngModel)]="userService.selectedUser.first_name" class="form-control" name="first_name" placeholder="First Name *" value=""/>
+
+                <input type="text" #lastName = "ngModel" [(ngModel)]="userService.selectedUser.last_name" class="form-control" name="last_name" placeholder="Last Name *" value=""/>
+
+                <input type="text" #email = "ngModel" [(ngModel)]="userService.selectedUser.email" class="form-control" name="email" placeholder="Your Email *" value=""/>
+
+                <input type="text" #mobile = "ngModel" [(ngModel)]="userService.selectedUser.mobile" class="form-control" name="mobile" placeholder="Mobile *" value=""/>
+
+                <input type="password" #password = "ngModel" [(ngModel)]="userService.selectedUser.password" class="form-control" name="password" placeholder="Your Password *" value=""/>
+
+                <input type="submit" class="btnSubmit" value="Sign Up" />
+
+        </form>
+
+        <div class="success" *ngIf="showSuccessMessage">
+         Saved Successfully.
+        </div>
+
+        <div class="alert" *ngIf="serverErrorMessages">
+         {{serverErrorMessages}}
+        </div>
+
+</div>

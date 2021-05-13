@@ -1,0 +1,31 @@
+<div class="main">
+    <h3>Sign In</h3>
+   <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+            
+            <input type="text" #email = "ngModel" [(ngModel)]="model.email" class="form-control" name="email" placeholder="Your Email *" value=""/>
+
+            <input type="password" #password = "ngModel" [(ngModel)]="model.password" class="form-control" name="password" placeholder="Your Password *" value=""/>
+
+            <input type="submit" class="btnSubmit" value="Sign In" />
+
+    </form>
+
+    <!-- <!-- <div class="success" *ngIf="showSuccessMessage">
+     Saved Successfully.
+    </div> -->
+
+    <div class="alert" *ngIf="serverErrorMessages">
+     {{serverErrorMessages}}
+    </div>
+
+    <div class="mt-4">
+        <div class="d-flex justify-content-center links">
+            Don't have an account? <a [routerLink]="['/sign-up']" class="ml-2">Sign Up</a>
+        </div>
+        <div class="d-flex justify-content-center links">
+            <a href="#">Forgot your password?</a>
+        </div>
+    </div>
+
+</div>
+
