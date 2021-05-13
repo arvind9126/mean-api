@@ -28,8 +28,8 @@ app.use((err, req, res, next) => {
     }
 })
 
-app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/local-storage/'}),
+app.get('*', (req, res) =>
+res.sendFile(path.join(__dirname, 'loan-ui', 'src', 'index.html'))
 );
 
 //start server
